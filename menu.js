@@ -21,7 +21,6 @@ class Menu {
         if (this._menuState === 3 && this._game._space) {
                     this._menuState = 0;
                     this._game.newGame();
-                    break;  
                 }
         for (let i = 0; i < this._game._clicks.length; i++) {
             if (this._menuState === 1) {
