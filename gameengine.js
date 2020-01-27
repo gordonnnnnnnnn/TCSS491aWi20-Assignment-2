@@ -71,7 +71,6 @@ class GameEngine {
             let rect = that._ctx.canvas.getBoundingClientRect();
             let x = e.clientX - rect.left
             let y = e.clientY - rect.top
-            console.log(`${x},${y}`);
             that._clicks.push({x: x, y: y, type: "left"});
             e.preventDefault();
         }, false);
