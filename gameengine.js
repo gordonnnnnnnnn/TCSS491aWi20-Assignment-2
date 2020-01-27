@@ -10,6 +10,7 @@ class GameEngine {
         this._ctx = null;
         this._left = null;
         this._right = null;
+        this._space = null;
         this._clicks = [];
         this._leftAccelStep = 0;
         this._rightAccelStep = 0;
@@ -53,6 +54,9 @@ class GameEngine {
                 that._right = true;
                 that._rightAccelStep = 0;
             }
+            if (c === "Space") {
+                that._space = true;
+            }
             e.preventDefault();
         }, false);
         this._ctx.canvas.addEventListener("keyup", function (e) {
@@ -64,6 +68,9 @@ class GameEngine {
             if (c === "KeyD" || c === "ArrowRight") {
                 that._right = false;
                 that._rightAccelStep = 0;
+            }
+            if (c === "Space") {
+                that._space = false;
             }
             e.preventDefault();
         }, false);
