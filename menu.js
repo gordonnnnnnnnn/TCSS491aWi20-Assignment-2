@@ -39,6 +39,11 @@ class Menu {
                 this._menuState = 1;
                 break;
             } else if (this._menuState === 3) {
+                if (this._game._space) {
+                    this._menuState = 0;
+                    this._game.newGame();
+                    break;  
+                }
                 if (this._game._clicks[i].x > 230
                 && this._game._clicks[i].x < 490
                 && this._game._clicks[i].y > 370
