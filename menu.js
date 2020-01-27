@@ -18,6 +18,11 @@ class Menu {
         }
     }
     update() {
+        if (this._menuState === 3 && this._game._space) {
+                    this._menuState = 0;
+                    this._game.newGame();
+                    break;  
+                }
         for (let i = 0; i < this._game._clicks.length; i++) {
             if (this._menuState === 1) {
                 if (this._game._clicks[i].x > 110
@@ -38,12 +43,7 @@ class Menu {
             } else if (this._menuState === 2) {
                 this._menuState = 1;
                 break;
-            } else if (this._menuState === 3) {
-                if (this._game._space) {
-                    this._menuState = 0;
-                    this._game.newGame();
-                    break;  
-                }
+            } else if (this._menuState === 3) {a
                 if (this._game._clicks[i].x > 230
                 && this._game._clicks[i].x < 490
                 && this._game._clicks[i].y > 370
