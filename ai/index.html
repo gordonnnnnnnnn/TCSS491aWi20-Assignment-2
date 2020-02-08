@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Assignment 2</title>
+    <script type="text/javascript" src="./trajcont.js"></script>
+    <script type="text/javascript" src="./balls.js"></script>
+    <script type="text/javascript" src="./animation.js"></script>
+    <script type="text/javascript" src="./timer.js"></script>
+    <script type="text/javascript" src="./gameengine.js"></script>
+    <script type="text/javascript" src="./paddle.js"></script>
+    <script type="text/javascript" src="./assetmanager.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+</head>
+<body>
+    <h1>Welcome to AI mode, feel free to adjust the paddle's AI fields.</h1>
+    <br>
+    <label for="view">Paddle view distance (0 to 100):</label>
+    <input type="number" id="view" name="view" min="0" max="100" value="50">
+    <P style="font-style: italic">The paddle's view distance is how far it can see in either direction.<br>0 means it can't see, 100 means it can see the entire game.<br>Visualized by two horizontal green lines.</P>
+    <br>
+    <label for="body">Paddle body awareness (0 to 100):</label>
+    <input type="number" id="body" name="body" min="0" max="100" value="50">
+    <p style="font-style: italic">The paddle's body awareness is how well it realizes the size of bodies.<br>0 means that the paddle thinks bodies are points on the xy plane;<br>100 means that the paddle is perfectly aware body sizes;<br>in between values as they increase start to predict body size with more accuracy.<br>Visualized by yellow rectangles around bodies.</p>
+    <br>
+    <label for="trajectory">Paddle trajectory prediction (0 to 100):</label>
+    <input type="number" id="trajectory" name="trajectory" min="0" max="100" value="50">
+    <P style="font-style: italic">The paddle's trajectory prediction is how it predicts where to go based on ball trajectory.<br>0 means that it only knows the current gamestate with no reference of time;<br>100 means that the paddle is tracking the balls trajectory over time perfectly;<br>in between values as they increase get better at predicting trajectory.<br>Visualized by ball trails.</P>
+    <br><br>
+    <canvas id="gameWorld" tabindex="1" width="720" height="720" style="border: 2px solid brown; background: black"></canvas>
+</body>
+</html>

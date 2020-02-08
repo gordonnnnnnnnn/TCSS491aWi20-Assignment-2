@@ -23,6 +23,10 @@ class BallOne {
             this._xVelocity = -this._xVelocity;
         }
         if (this._y - this._vertHit < 0 || this.hit()) {
+            if (this.hit()) {
+                let iP = 360 - this._game._entities[3]._vertHit - this._vertHit;
+                this._y = iP - (this._y - iP);
+            }
             this._yVelocity = -this._yVelocity;
         }
         if (this._y > 360) {
@@ -87,6 +91,10 @@ class BallTwo {
             this._xVelocity = -this._xVelocity;
         }
         if (this._y + this._vertHit > 720 || this.hit()) {
+            if (this.hit()) {
+                let iP = 360 + this._game._entities[3]._vertHit + this._vertHit;
+                this._y = iP + (iP - this._y);
+            }
             this._yVelocity = -this._yVelocity;
         }
         if (this._y < 360) {

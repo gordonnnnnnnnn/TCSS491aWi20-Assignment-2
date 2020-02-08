@@ -39,6 +39,13 @@ class Menu {
                     this._menuState = 2;
                     break;
                 }
+                if (this._game._clicks[i].x > 220
+                && this._game._clicks[i].x < 500
+                && this._game._clicks[i].y > 510
+                && this._game._clicks[i].y < 700) {
+                    window.location.href = './ai/index.html';
+                    break;
+                }
             } else if (this._menuState === 2) {
                 this._menuState = 1;
                 break;
