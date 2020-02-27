@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Assignment 2</title>
+    <script type="text/javascript" src="http://24.16.255.56:8888/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="./trajcont.js"></script>
     <script type="text/javascript" src="./balls.js"></script>
     <script type="text/javascript" src="./animation.js"></script>
@@ -28,6 +29,9 @@
     <input type="number" id="trajectory" name="trajectory" min="0" max="100" value="50">
     <P style="font-style: italic">The paddle's trajectory prediction is how it predicts where to go based on ball trajectory.<br>0 means that it only knows the current gamestate with no reference of time;<br>100 means that the paddle is tracking the balls trajectory over time perfectly;<br>in between values as they increase get better at predicting trajectory.<br>Visualized by ball trails.</P>
     <br><br>
+    <button id="save" type="button">Save</button>
+    <button id="load" type="button">Load</button>
+    <br>
     <canvas id="gameWorld" tabindex="1" width="720" height="720" style="border: 2px solid brown; background: black"></canvas>
 </body>
 </html>

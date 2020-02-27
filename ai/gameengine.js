@@ -146,6 +146,45 @@ class GameEngine {
         ball2.start();
         paddle.start();
     }
+
+    getGameState() {
+        return {studentname: "Gordon McCreary",
+            statename: "aiMode",
+            view: this._entities[3]._viewDistance,
+            body: this._entities[3]._bodyAwareness,
+            traj: this._entities[3]._trajectoryPrediction,
+
+            padPos: this._entities[3]._x,
+            padVelo: this._entities[3]._xVelocity,
+            padNextBall: this._entities[3]._nextBall,
+
+            tBallPos: {x: this._entities[1]._x, y: this._entities[1]._y},
+            tBallVelo: {x: this._entities[1]._xVelocity, y: this._entities[1]._yVelocity},
+            bBallPos: {x: this._entities[2]._x, y: this._entities[2]._y},
+            bBallVelo: {x: this._entities[2]._xVelocity, y: this._entities[2]._yVelocity}};
+    }
+
+    setGameState(state) {
+        this._entities[3]._viewDistance = state.view;
+        document.getElementById('view').value = state.view;
+        this._entities[3]._bodyAwareness = state.body;
+        document.getElementById('body').value = state.body;
+        this._entities[3]._trajectoryPrediction = state.traj;
+        document.getElementById('trajectory').value = state.traj;
+
+        this._entities[3]._x = state.padPos;
+        this._entities[3]._xVelocity = state.padVelo;
+        this._entities[3]._nextBall = state.padNextBall;
+
+        this._entities[1]._x = state.tBallPos.x;
+        this._entities[1]._y = state.tBallPos.y;
+        this._entities[1]._xVelocity = state.tBallVelo.x;
+        this._entities[1]._yVelocity = state.tBallVelo.y;
+        this._entities[2]._x = state.bBallPos.x;
+        this._entities[2]._y = state.bBallPos.y;
+        this._entities[2]._xVelocity = state.bBallVelo.x;
+        this._entities[2]._yVelocity = state.bBallVelo.y;
+    }
 }
 
 // Used in start() to cap framerate.
